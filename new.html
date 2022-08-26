@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="">
+        <title>
+
+        </title>
+    </head>
+    <body>
+        <form class="container">
+            <style>
+                .container{
+                    width: 100%;
+                    height: 100vh;
+                    background-image:linear-gradient(blue,purple) ;
+                    
+                    
+                }
+            </style>
+        <h1>ENTER YOUR<br>
+        INFORMATION</h1>
+        <style>
+h1{
+    text-align: center;
+    padding-top: 50px;
+}
+        </style>
+        <br>
+        <label for="name" class="a">NAME</label>
+        <input type="text" class="name" name="Name" placeholder="" requiredbox="30" id="name">
+        <br>
+        <style>
+            *{
+                margin: auto;
+                padding: 0;
+            }
+            .name{
+                text-align: center;
+                padding-top: 20px;
+                padding-bottom: 15px;
+                background-color: palevioletred;
+                border: 5px solid black;
+                margin-top: 20px;
+
+            }
+            ::placeholder{
+                font-size: 20px;
+                padding: 5px;
+                padding-bottom: 5px;
+            }
+            .a{
+                text-align: center;
+                font-weight: 800;
+                padding-left: 500px;
+
+            }
+            #button{
+                border: 5px black solid;
+                background-color: orangered;
+               padding-top: 5px;
+               padding-bottom: 5px;
+        margin-left: 550px;
+        font-size: 15px;
+            }
+        </style>
+        <br>
+        <label for="email" class="a">Email</label>
+        <input type="email"  class="name" name=email" placeholder=""required box="30" id="email">
+        <br>
+        <br>
+        <button onclick="storedata()" id="button">ENTER</button>
+
+        </form>
+        <script>
+            function storedata()  {
+            var name = document.getElementById('name').value;
+            console.log(name);
+            var email = document.getElementById('email').value;
+            console.log(email);
+            var button = document.getElementById('button');
+           
+    
+            }
+          
+           
+               
+            
+
+          
+        </script>
+
+        
+    </body>
+</html>
