@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel ="stylesheet" href="">
+        <title>
+
+        </title>
+    </head>
+    <body>
+        <form>
+            <label for="student name">STUDENT NAME</label>
+            <input type ="text" class="stu" id="stu">
+            <br>
+            <br>
+            <label for="teacher views">TEACHER VIEWS</label>
+            <input type ="text" class="tech" id="tech">
+            <br>
+            <br>
+            <button id="add" class="add"> ADD TO LIST</button>
+            <br>
+            
+
+            <table  border="1"  cellspaning="1">
+                <thead >
+                    <tr>
+                        <th>SNo</th>
+                        <th> STUDENT NAME</th>
+                        <th> TEACHER VIEWS</th>
+                        <th> ACTIONS</th>
+
+                    </tr>
+                </thead>
+
+                <tbody id="tb">
+
+                    <tr>
+                        <th>1</th>
+                        <th>san</th>
+                        <th>good</th>
+                        <th><button>DELETE</button></th>
+                    </tr>
+                </tbody>
+                
+
+
+            </table>
+            
+        </form>
+        <script>
+           
+   add=document.getElementById('add');
+   add.addEventListener("click" ,() =>{
+    s=document.getElementById('stu').value;
+t=document.getElementById('tech').value;
+console.log(s,t)
+
+if(localStorage.getItem('itemsJson') == null){
+    
+    itemsJsonArray=[];
+    itemsJsonArray.push = ([s,t]);
+    localStorage.setItem('itemsJson' ,JSON.stringify(itemsJsonArray))
+} 
+else{
+    itemsJsonArrayStr=localStorage.getItem('itemsJson');
+    itemsJsonArray= JSON.parse(itemsJsonArrayStr);
+    itemsJsonArray.push = ([s,t]);
+    localStorage.setItem('itemsJson' ,JSON.stringify(itemsJsonArray))
+
+}
+console.log(s,t);
+  tb=document.getElementById('tb');
+let str="";
+itemsJsonArray.forEach((element ,index) =>{
+    tb=document.getElementById('tb');
+
+
+    str +=
+    `
+    <tr>
+        <th>${index+1}</th>
+        <th>${element[0]}</th>
+        <th> ${element[1]}</th>
+        <th><button onclick="del(${index[1]})" >DELETE</button></th>
+    </tr>`
+});
+tb.innerHTML=   str +=
+    `
+    <tr>
+        <th>${index+1}</th>
+        <th>${element[0]}</th>
+        <th> ${element[1]}</th>
+        <th><button >DELETE</button></th>
+    </tr>`;
+
+});
+
+
+   
+              
+
+
+    
+
+function del() {
+ 
+console.log("Delete" , itemindex);
+itemsJsonArrayStr=localStorage.getItem('itemsJson');
+itemsJsonArray= JSON.parse(itemsJsonArrayStr);
+itemsJsonArray.splice(itemindex ,1);
+
+
+localStorage.setItem('itemsJson' ,JSON.stringify(itemsJsonArray));
+
+}
+
+
+
+
+
+
+            
+
+        
+      
+
+
+
+     
+          
+       
+
+
+
+   
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
+            
+           
+             

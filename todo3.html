@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel ="stylesheet" href="">
+        <title>
+
+        </title>
+
+    </head>
+    <body>
+        <h1>ADD ITEMS</h1>
+        <input type="text" id="t"  value=""     >
+        <button   id="a">ADD</button>
+
+        <br>
+        <ol id="result">
+           
+
+            
+        </ol>
+    
+    <script>
+        let a=document.getElementById('t').value
+      let r =document.getElementById('result')
+      
+
+document.querySelector('#a').onclick=function(){
+if(document.querySelector('#t').value.length==0){
+    alert('please enter something');
+}
+else{
+    document.querySelector('#result').innerHTML += `  
+    <div class="result"   >
+        <span id="resul">
+            ${document.querySelector('#t').value}
+            </span>
+
+
+
+
+    `
+
+    
+
+
+
+    
+
+
+
+
+
+
+}
+ 
+ 
+
+}
+        
+
+
+
+
+    </script>
+    </body>
+</html>

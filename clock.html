@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel ="stylesheet" href="">
+        <title>
+        </title>
+    </head>
+    <body>
+        <style>
+            h2{
+                background: pink;
+                font-size: 50px;
+                font-weight: bold;
+                
+            }
+        </style>
+
+
+        <h2 id="clock" class="clock">
+            The time is:<span id="time">  </span>
+        </h2>
+        <script>
+            let a = new Date();
+            let date;
+            let time;
+            setInterval(() => {
+                a = new Date();
+               
+                time= a.getHours() +":" +a.getMinutes()+ ":" + a.getSeconds();
+
+                document.getElementById('time').innerHTML=time + "on"+ a;
+                
+            }, 1000);
+           
+                
+          
+ 
+
+        </script>
+
+    </body>
+
+
+</html>
